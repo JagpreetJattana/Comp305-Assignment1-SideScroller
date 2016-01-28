@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OceanController : MonoBehaviour {
+public class CityController : MonoBehaviour {
     //private instance variable
     private Transform _transform;
     private Vector2 _currentPosition;
@@ -22,7 +22,7 @@ public class OceanController : MonoBehaviour {
         this._currentPosition -= new Vector2(this.speed,0);
         this._transform.position = this._currentPosition;
 
-        if (this._currentPosition.x <=-640f) {
+        if (this._currentPosition.x <=-860f) {
             this.Reset();
         }
 	
@@ -30,6 +30,6 @@ public class OceanController : MonoBehaviour {
 
     public void Reset()
     {
-        this._transform.position = new Vector2(640, 0f);
+        this._transform.position = new Vector2(860, 0f);
     }
 }

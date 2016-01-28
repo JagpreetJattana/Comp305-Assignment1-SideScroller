@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CloudController : MonoBehaviour {
+public class EnemyController : MonoBehaviour {
 
     //private instance variable
     private Transform _transform;

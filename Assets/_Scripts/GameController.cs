@@ -4,7 +4,7 @@ using System.Collections;
 public class GameController : MonoBehaviour {
     // Public instance varaible
     public int cloudNumber=3;
-    public CloudController cloud;
+    public EnemyController cloud;
 
 
 	// Use this for initialization

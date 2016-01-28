@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlaneController : MonoBehaviour {
+public class SupermanController : MonoBehaviour {
     //private instance variables
     private float _playerInput;
     private Transform _transform;

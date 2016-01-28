@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class IlandController : MonoBehaviour {
+public class RingController : MonoBehaviour {
     //private instance variable
     private Transform _transform;
     private Vector2 _currentPosition;
