@@ -22,7 +22,7 @@ public class CityController : MonoBehaviour {
         this._currentPosition -= new Vector2(this.speed,0);
         this._transform.position = this._currentPosition;
 
-        if (this._currentPosition.x <=-860f) {
+        if (this._currentPosition.x <=-640f) {
             this.Reset();
         }
 	
@@ -30,6 +30,6 @@ public class CityController : MonoBehaviour {
 
     public void Reset()
     {
-        this._transform.position = new Vector2(860, 0f);
+        this._transform.position = new Vector2(640, 0f);
     }
 }
