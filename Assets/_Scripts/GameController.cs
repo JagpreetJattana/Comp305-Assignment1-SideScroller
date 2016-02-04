@@ -7,16 +7,23 @@ public class GameController : MonoBehaviour {
     //private instance variables
     private int _scoreValue;         
     private int _livesValue;
+    [SerializeField]
+    private AudioSource _gameOverSound;
     
      
 
 
     // Public instance varaibles
-    public int cloudNumber=3;
-    public EnemyController cloud;
+    public int fireballNumber=3;
+    public EnemyController fireball;
     public Text livesLabel;
     public Text scoreLabel;
-
+    public Text gameOverLabel;
+    public SupermanController superman;
+    public RingController ring;
+    public Text finalScoreLabel;
+    public Button restartButton;
+   
 
 
     public int ScoreValue
@@ -43,14 +50,21 @@ public class GameController : MonoBehaviour {
         set
         {
             _livesValue = value;
-            this.livesLabel.text = "Lives: " + this._livesValue;
+            if (this._livesValue <= 0) {
+                this._endGame();
+                }
+            
+            else {
+                this.livesLabel.text = "Lives: " + this._livesValue;
+            }
+            
         }
     }
     // Use this for initialization
     void Start () {
         this._initialize();
-        this.ScoreValue = 0;
-            this.LivesValue = 5;
+       
+
 	
 	}
 	
@@ -61,9 +75,34 @@ public class GameController : MonoBehaviour {
 
     //private  methods
     private void _initialize() {
-        for (int cloudCount = 0; cloudCount < this.cloudNumber; cloudCount++) {
-            Instantiate(cloud.gameObject);
+        this.ScoreValue = 0;
+        this.LivesValue = 5;
+        this.gameOverLabel.enabled = false;
+        this.finalScoreLabel.enabled = false;
+        this.restartButton.gameObject.SetActive(false);
+        for (int ballCount = 0; ballCount < this.fireballNumber; ballCount++) {
+            Instantiate(fireball.gameObject);
         }
 
+    }
+
+    private void _endGame() {
+        this.finalScoreLabel.text = "Final Score:" + this._scoreValue;
+        this.gameOverLabel.enabled = true;
+        this.finalScoreLabel.enabled = true;
+        this.restartButton.gameObject.SetActive(true);
+        this.livesLabel.enabled = false;
+        this.scoreLabel.enabled = false;
+        this.superman.gameObject.SetActive(false);
+        this.ring.gameObject.SetActive(false);
+        this._gameOverSound.Play();
+      //  this.enemy.gameObject.SetActive(false);
+
+    }
+
+    //public methids
+
+    public void RestarButtonClicked() {
+        Application.LoadLevel("Main");
     }
 }
