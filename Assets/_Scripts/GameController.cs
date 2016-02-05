@@ -100,7 +100,7 @@ public class GameController : MonoBehaviour {
 
     }
 
-    //public methids
+    //public methods
 
     public void RestarButtonClicked() {
         Application.LoadLevel("Main");
