@@ -6,6 +6,7 @@ public class SupermanCollider : MonoBehaviour {
     private AudioSource[] _audioSources;
     private AudioSource _ringSound;
     private AudioSource _fireballSound;
+    private AudioSource _heartSound;
 
     //public instance variables
     public GameController gameController;
@@ -16,6 +17,7 @@ public class SupermanCollider : MonoBehaviour {
         this._audioSources = gameObject.GetComponents<AudioSource>();
         this._fireballSound = this._audioSources[1];
         this._ringSound = this._audioSources[2];
+        this._heartSound = this._audioSources[3];
     }
 	
 	// Update is called once per frame
@@ -23,6 +25,9 @@ public class SupermanCollider : MonoBehaviour {
 	
 	}
 
+    //public methods
+
+    //used ontrigger method to detect collisions between objects
     public void OnTriggerEnter2D(Collider2D other)
     {
        
@@ -35,6 +40,13 @@ public class SupermanCollider : MonoBehaviour {
            
             this._fireballSound.Play();
             this.gameController.LivesValue -= 1;
+        }
+
+        if (other.gameObject.CompareTag("Heart"))
+        {
+
+            this._heartSound.Play();
+            this.gameController.LivesValue += 1;
         }
 
     }

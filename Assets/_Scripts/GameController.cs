@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour {
     public Button restartButton;
    
 
-
+    //getters and setters
     public int ScoreValue
     {
         get
@@ -85,7 +85,8 @@ public class GameController : MonoBehaviour {
         }
 
     }
-
+    //private methods
+    //method to end game
     private void _endGame() {
         this.finalScoreLabel.text = "Final Score:" + this._scoreValue;
         this.gameOverLabel.enabled = true;
@@ -101,7 +102,7 @@ public class GameController : MonoBehaviour {
     }
 
     //public methods
-
+    //method to restart the game
     public void RestarButtonClicked() {
         Application.LoadLevel("Main");
     }

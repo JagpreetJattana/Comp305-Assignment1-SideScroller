@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RingController : MonoBehaviour {
+public class HeartController : MonoBehaviour {
+
     //private instance variable
     private Transform _transform;
     private Vector2 _currentPosition;
 
     //public instance varibales
-    public float speed = 5;
+    public float speed = 4;
 
     // Use this for initialization
     void Start()
@@ -21,23 +22,21 @@ public class RingController : MonoBehaviour {
     void Update()
     {
         this._currentPosition = this._transform.position;
-        this._currentPosition -= new Vector2(this.speed,0);
+        this._currentPosition -= new Vector2(this.speed, 0);
         this._transform.position = this._currentPosition;
 
         if (this._currentPosition.x <= -320f)
         {
-            //reset the ring
+            //reset the heart
             this.Reset();
         }
 
     }
     //public methods
-    //method to reset the ring
+    //method to reset the heart
     public void Reset()
     {
         float xPosition = Random.Range(-240f, 240f);
-        this._transform.position = new Vector2(360f,xPosition);
+        this._transform.position = new Vector2(1060f, xPosition);
     }
 }
-
-

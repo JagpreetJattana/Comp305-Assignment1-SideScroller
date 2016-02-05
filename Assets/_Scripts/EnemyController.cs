@@ -33,12 +33,15 @@ public class EnemyController : MonoBehaviour {
 
         if (this._currentPosition.x <= -440f)
         {
-            //reset the iland
+            //reset the fireball
             this.Reset();
         }
 
     }
 
+    //public methods
+
+        //method to reset the fireball
     public void Reset()
     {
         this._horizontalSpeed = Random.Range(this.minHSpeed, this.maxHSpeed);

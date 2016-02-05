@@ -48,6 +48,7 @@
      <Compile Include="Assets\_Scripts\CityController.cs" />
      <Compile Include="Assets\_Scripts\EnemyController.cs" />
      <Compile Include="Assets\_Scripts\GameController.cs" />
+     <Compile Include="Assets\_Scripts\HeartController.cs" />
      <Compile Include="Assets\_Scripts\RingController.cs" />
      <Compile Include="Assets\_Scripts\SupermanCollider.cs" />
      <Compile Include="Assets\_Scripts\SupermanController.cs" />
