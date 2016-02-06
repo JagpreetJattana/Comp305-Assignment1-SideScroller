@@ -37,6 +37,6 @@ public class HeartController : MonoBehaviour {
     public void Reset()
     {
         float xPosition = Random.Range(-240f, 240f);
-        this._transform.position = new Vector2(1060f, xPosition);
+        this._transform.position = new Vector2(1260f, xPosition);
     }
 }

@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour {
     public RingController ring;
     public Text finalScoreLabel;
     public Button restartButton;
+    public HeartController heart;
    
 
     //getters and setters
@@ -95,6 +96,7 @@ public class GameController : MonoBehaviour {
         this.livesLabel.enabled = false;
         this.scoreLabel.enabled = false;
         this.superman.gameObject.SetActive(false);
+        this.heart.gameObject.SetActive(false);
         this.ring.gameObject.SetActive(false);
         this._gameOverSound.Play();
       //  this.enemy.gameObject.SetActive(false);
